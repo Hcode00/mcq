@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical Engineering MCQ Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #1a202c; /* Dark background */
+            color: #e2e8f0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: #2d3748; /* Darker container background */
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .question-card {
+            background-color: #4a5568; /* Card background */
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #4a5568;
+        }
+        .question-card p {
+            font-weight: 600;
+            color: #ffffff; /* White text for questions */
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        .options-list label {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            background-color: #2d3748; /* Option background */
+            border: 1px solid #4a5568;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .options-list label:hover {
+            background-color: #2b6cb0; /* Blue hover for options */
+            border-color: #2b6cb0;
+            color: #ffffff;
+        }
+        .options-list input[type="radio"] {
+            margin-right: 1rem;
+            accent-color: #63b3ed; /* Light blue accent color */
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: #3b82f6;
+            color: #ffffff;
+            font-weight: 700;
+            border: none;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .submit-btn:hover {
+            background-color: #2563eb;
+        }
+        .score-message {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #2f855a; /* Dark green for correct message */
+            color: #d1fae5;
+            border: 1px solid #48bb78;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            display: none;
+        }
+        /* New styles for feedback */
+        .correct {
+            background-color: #2f855a !important; /* Teal for correct */
+            border-color: #48bb78 !important;
+        }
+        .incorrect {
+            background-color: #c53030 !important; /* Red for incorrect */
+            border-color: #e53e3e !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center mb-8 text-white">Electrical Power & Distribution Systems Quiz</h1>
+        <p class="text-center text-gray-400 mb-6">Test your knowledge with these multiple-choice questions from your lecture notes.</p>
+        
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question-card">
+                <p>1. What are the three principal components of an electric power system?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q1" value="a"> A) Generation, Transmission, and Distribution.</label>
+                    <label><input type="radio" name="q1" value="b"> B) Substations, Transformers, and Loads.</label>
+                    <label><input type="radio" name="q1" value="c"> C) Conductors, Insulators, and Towers.</label>
+                    <label><input type="radio" name="q1" value="d"> D) Relays, Circuit Breakers, and Sensors.</label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-card">
+                <p>2. What is the primary purpose of a transmission line in a power system?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q2" value="a"> A) To connect individual loads to the power grid.</label>
+                    <label><input type="radio" name="q2" value="b"> B) To generate electrical power.</label>
+                    <label><input type="radio" name="q2" value="c"> C) To act as connection links between generating stations and distribution systems.</label>
+                    <label><input type="radio" name="q2" value="d"> D) To reduce voltage for consumer use.</label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-card">
+                <p>3. Which component of a power system connects all individual loads in a given area to the transmission lines?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q3" value="a"> A) Generating stations.</label>
+                    <label><input type="radio" name="q3" value="b"> B) Transmission lines.</label>
+                    <label><input type="radio" name="q3" value="c"> C) Distribution systems.</label>
+                    <label><input type="radio" name="q3" value="d"> D) Substations.</label>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-card">
+                <p>4. What is the role of a substation in the power system?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q4" value="a"> A) To generate power.</label>
+                    <label><input type="radio" name="q4" value="b"> B) To step up voltage for long distance transmission.</label>
+                    <label><input type="radio" name="q4" value="c"> C) To step down voltage for distribution and connect to loads.</label>
+                    <label><input type="radio" name="q4" value="d"> D) To consume power.</label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-card">
+                <p>5. The main purpose of a "generator step up transformer" is to:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q5" value="a"> A) Decrease the voltage for distribution.</label>
+                    <label><input type="radio" name="q5" value="b"> B) Increase the voltage for long distance transmission.</label>
+                    <label><input type="radio" name="q5" value="c"> C) Regulate the power factor.</label>
+                    <label><input type="radio" name="q5" value="d"> D) Provide low voltage for the relay systems.</label>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question-card">
+                <p>6. The lecture notes mention that the two main objectives of interconnecting power systems are to improve:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q6" value="a"> A) Efficiency and cost.</label>
+                    <label><input type="radio" name="q6" value="b"> B) Stability and reliability.</label>
+                    <label><input type="radio" name="q6" value="c"> C) Voltage and current.</label>
+                    <label><input type="radio" name="q6" value="d"> D) Resistance and reactance.</label>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question-card">
+                <p>7. What is the most common conductor material used for overhead transmission lines?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q7" value="a"> A) Copper.</label>
+                    <label><input type="radio" name="q7" value="b"> B) Gold.</label>
+                    <label><input type="radio" name="q7" value="c"> C) ACSR (Aluminum Conductor Steel Reinforced).</label>
+                    <label><input type="radio" name="q7" value="d"> D) Silver.</label>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question-card">
+                <p>8. What is the phenomenon that causes power loss and can be reduced by using bundled conductors?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q8" value="a"> A) Skin effect.</label>
+                    <label><input type="radio" name="q8" value="b"> B) Proximity effect.</label>
+                    <label><input type="radio" name="q8" value="c"> C) Corona effect.</label>
+                    <label><input type="radio" name="q8" value="d"> D) Ferranti effect.</label>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question-card">
+                <p>9. For a transmission line with a length greater than 250 km, it is classified as a:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q9" value="a"> A) Short line.</label>
+                    <label><input type="radio" name="q9" value="b"> B) Medium line.</label>
+                    <label><input type="radio" name="q9" value="c"> C) Long line.</label>
+                    <label><input type="radio" name="q9" value="d"> D) Extra-long line.</label>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question-card">
+                <p>10. What is the main reason for using bundled conductors in EHV transmission lines?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q10" value="a"> A) To increase the conductor's resistance.</label>
+                    <label><input type="radio" name="q10" value="b"> B) To reduce the series impedance and corona losses.</label>
+                    <label><input type="radio" name="q10" value="c"> C) To make the conductors more rigid.</label>
+                    <label><input type="radio" name="q10" value="d"> D) To increase the overall weight of the line.</label>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question-card">
+                <p>11. A transmission line with a length between 80 km and 250 km is classified as a:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q11" value="a"> A) Short line.</label>
+                    <label><input type="radio" name="q11" value="b"> B) Medium line.</label>
+                    <label><input type="radio" name="q11" value="c"> C) Long line.</label>
+                    <label><input type="radio" name="q11" value="d"> D) Sub-long line.</label>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question-card">
+                <p>12. What is the main advantage of using a three-phase system over a single-phase system for power transmission?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q12" value="a"> A) It uses fewer conductors.</label>
+                    <label><input type="radio" name="q12" value="b"> B) It requires less voltage.</label>
+                    <label><input type="radio" name="q12" value="c"> C) It is more efficient and offers constant power flow.</label>
+                    <label><input type="radio" name="q12" value="d"> D) It is easier to install.</label>
+                </div>
+            </div>
+            
+            <!-- Question 13 -->
+            <div class="question-card">
+                <p>13. What is the primary cause of the voltage drop along a transmission line?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q13" value="a"> A) The line's series impedance.</label>
+                    <label><input type="radio" name="q13" value="b"> B) The shunt admittance.</label>
+                    <label><input type="radio" name="q13" value="c"> C) The load at the receiving end.</label>
+                    <label><input type="radio" name="q13" value="d"> D) The temperature of the conductors.</label>
+                </div>
+            </div>
+            
+            <!-- Question 14 -->
+            <div class="question-card">
+                <p>14. For a short transmission line, what characteristic is typically neglected?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q14" value="a"> A) Series resistance.</label>
+                    <label><input type="radio" name="q14" value="b"> B) Series inductive reactance.</label>
+                    <label><input type="radio" name="q14" value="c"> C) Shunt capacitance and conductance.</label>
+                    <label><input type="radio" name="q14" value="d"> D) Voltage drop.</label>
+                </div>
+            </div>
+
+            <!-- Question 15 -->
+            <div class="question-card">
+                <p>15. In a transmission line, what is the term for the shunt admittance per unit length?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q15" value="a"> A) Z.</label>
+                    <label><input type="radio" name="q15" value="b"> B) Y.</label>
+                    <label><input type="radio" name="q15" value="c"> C) R.</label>
+                    <label><input type="radio" name="q15" value="d"> D) X.</label>
+                </div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="question-card">
+                <p>16. What does "shunt susceptance" (B) of a transmission line represent?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q16" value="a"> A) The line's series impedance.</label>
+                    <label><input type="radio" name="q16" value="b"> B) The line's shunt conductance.</label>
+                    <label><input type="radio" name="q16" value="c"> C) The reactive component of the shunt admittance.</label>
+                    <label><input type="radio" name="q16" value="d"> D) The resistive component of the series impedance.</label>
+                </div>
+            </div>
+
+            <!-- Question 17 -->
+            <div class="question-card">
+                <p>17. The shunt admittance of a transmission line is formed by its capacitance and:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q17" value="a"> A) Resistance.</label>
+                    <label><input type="radio" name="q17" value="b"> B) Inductance.</label>
+                    <label><input type="radio" name="q17" value="c"> C) Conductance.</label>
+                    <label><input type="radio" name="q17" value="d"> D) Reactance.</label>
+                </div>
+            </div>
+
+            <!-- Question 18 -->
+            <div class="question-card">
+                <p>18. The importance of shunt capacitance in a transmission line increases with the magnitude of the operating voltage and:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q18" value="a"> A) Line resistance.</label>
+                    <label><input type="radio" name="q18" value="b"> B) Line inductance.</label>
+                    <label><input type="radio" name="q18" value="c"> C) Line length.</label>
+                    <label><input type="radio" name="q18" value="d"> D) Number of conductors.</label>
+                </div>
+            </div>
+
+            <!-- Question 19 -->
+            <div class="question-card">
+                <p>19. The "two-port network" model is used to represent which component of a power system?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q19" value="a"> A) A generator.</label>
+                    <label><input type="radio" name="q19" value="b"> B) A transformer.</label>
+                    <label><input type="radio" name="q19" value="c"> C) A transmission line.</label>
+                    <label><input type="radio" name="q19" value="d"> D) A load.</label>
+                </div>
+            </div>
+
+            <!-- Question 20 -->
+            <div class="question-card">
+                <p>20. Why is the resistance of a transmission line typically very small compared to its inductive reactance?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q20" value="a"> A) Because the conductors are very short.</label>
+                    <label><input type="radio" name="q20" value="b"> B) Because the conductors are made of silver.</label>
+                    <label><input type="radio" name="q20" value="c"> C) To minimize power losses and maximize efficiency.</label>
+                    <label><input type="radio" name="q20" value="d"> D) It is not always smaller.</label>
+                </div>
+            </div>
+
+            <!-- Question 21 -->
+            <div class="question-card">
+                <p>21. What does a distribution transformer typically reduce the medium voltage to?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q21" value="a"> A) The generating voltage.</label>
+                    <label><input type="radio" name="q21" value="b"> B) The transmission voltage.</label>
+                    <label><input type="radio" name="q21" value="c"> C) The utilization voltage.</label>
+                    <label><input type="radio" name="q21" value="d"> D) The rated voltage of the line.</label>
+                </div>
+            </div>
+
+            <!-- Question 22 -->
+            <div class="question-card">
+                <p>22. What is the permissible voltage variation limit at consumer terminals, according to the notes?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q22" value="a"> A) $\pm$ 2%.</label>
+                    <label><input type="radio" name="q22" value="b"> B) $\pm$ 5%.</label>
+                    <label><input type="radio" name="q22" value="c"> C) $\pm$ 10%.</label>
+                    <label><input type="radio" name="q22" value="d"> D) $\pm$ 15%.</label>
+                </div>
+            </div>
+
+            <!-- Question 23 -->
+            <div class="question-card">
+                <p>23. Which of the following is a problem associated with under-voltage?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q23" value="a"> A) Insulation breakdown.</label>
+                    <label><input type="radio" name="q23" value="b"> B) Burning out of lamps.</label>
+                    <label><input type="radio" name="q23" value="c"> C) Inefficient lighting and improper motor operation.</label>
+                    <label><input type="radio" name="q23" value="d"> D) Fire and explosion.</label>
+                </div>
+            </div>
+
+            <!-- Question 24 -->
+            <div class="question-card">
+                <p>24. The main consideration when designing a cable distributor is to manage the:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q24" value="a"> A) Cost of the cable.</label>
+                    <label><input type="radio" name="q24" value="b"> B) Power factor of the load.</label>
+                    <label><input type="radio" name="q24" value="c"> C) Voltage drop along its length.</label>
+                    <label><input type="radio" name="q24" value="d"> D) Mechanical strength of the cable.</label>
+                </div>
+            </div>
+
+            <!-- Question 25 -->
+            <div class="question-card">
+                <p>25. A device that is generally a small cable connecting the distributors to the consumers is called a:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q25" value="a"> A) Feeder.</label>
+                    <label><input type="radio" name="q25" value="b"> B) Service main.</label>
+                    <label><input type="radio" name="q25" value="c"> C) Conductor.</label>
+                    <label><input type="radio" name="q25" value="d"> D) Transmission line.</label>
+                </div>
+            </div>
+
+            <!-- Question 26 -->
+            <div class="question-card">
+                <p>26. Which of the following is NOT a component of an electrical protection system mentioned in the notes?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q26" value="a"> A) Transducers/Instrument Transformers.</label>
+                    <label><input type="radio" name="q26" value="b"> B) Relays.</label>
+                    <label><input type="radio" name="q26" value="c"> C) Circuit Breakers.</label>
+                    <label><input type="radio" name="q26" value="d"> D) Voltage Regulators.</label>
+                </div>
+            </div>
+
+            <!-- Question 27 -->
+            <div class="question-card">
+                <p>27. What is the function of a relay in an electrical protection system?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q27" value="a"> A) To open the circuit and interrupt the fault current.</label>
+                    <label><input type="radio" name="q27" value="b"> B) To step down the voltage for consumer use.</label>
+                    <label><input type="radio" name="q27" value="c"> C) To sense a fault and send a trip signal to the circuit breaker.</label>
+                    <label><input type="radio" name="q27" value="d"> D) To provide a low current and voltage level.</label>
+                </div>
+            </div>
+
+            <!-- Question 28 -->
+            <div class="question-card">
+                <p>28. A circuit breaker's main function is to:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q28" value="a"> A) Sense a fault condition.</label>
+                    <label><input type="radio" name="q28" value="b"> B) Provide a low voltage signal.</label>
+                    <label><input type="radio" name="q28" value="c"> C) Open the line and interrupt the fault current.</label>
+                    <label><input type="radio" name="q28" value="d"> D) Increase the system's power factor.</label>
+                </div>
+            </div>
+
+            <!-- Question 29 -->
+            <div class="question-card">
+                <p>29. What can a short circuit cause if it is allowed to persist?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q29" value="a"> A) A decrease in current and voltage.</label>
+                    <label><input type="radio" name="q29" value="b"> B) An increase in line impedance.</label>
+                    <label><input type="radio" name="q29" value="c"> C) Damage to equipment, fire, and explosion.</label>
+                    <label><input type="radio" name="q29" value="d"> D) A reduction in power losses.</label>
+                </div>
+            </div>
+
+            <!-- Question 30 -->
+            <div class="question-card">
+                <p>30. Why are instrument transformers used in a protection system?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q30" value="a"> A) To increase the voltage and current to the relays.</label>
+                    <label><input type="radio" name="q30" value="b"> B) To provide a low current and voltage with standardized levels for relays.</label>
+                    <label><input type="radio" name="q30" value="c"> C) To open the circuit during a fault.</label>
+                    <label><input type="radio" name="q30" value="d"> D) To generate the tripping signal.</label>
+                </div>
+            </div>
+            
+            <!-- Question 31 -->
+            <div class="question-card">
+                <p>31. What is the typical operating voltage for a secondary distribution system in a 3-phase configuration?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q31" value="a"> A) 11 kV.</label>
+                    <label><input type="radio" name="q31" value="b"> B) 220 V.</label>
+                    <label><input type="radio" name="q31" value="c"> C) 380 V.</label>
+                    <label><input type="radio" name="q31" value="d"> D) 500 kV.</label>
+                </div>
+            </div>
+            
+            <!-- Question 32 -->
+            <div class="question-card">
+                <p>32. The main purpose of a protection system is to protect against:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q32" value="a"> A) Normal operating currents.</label>
+                    <label><input type="radio" name="q32" value="b"> B) Short circuits and abnormal operation.</label>
+                    <label><input type="radio" name="q32" value="c"> C) Power factor changes.</label>
+                    <label><input type="radio" name="q32" value="d"> D) Voltage fluctuations.</label>
+                </div>
+            </div>
+
+            <!-- Question 33 -->
+            <div class="question-card">
+                <p>33. Short circuit currents can be several orders of magnitude larger than:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q33" value="a"> A) Starting currents.</label>
+                    <label><input type="radio" name="q33" value="b"> B) Rated currents.</label>
+                    <label><input type="radio" name="q33" value="c"> C) No-load currents.</label>
+                    <label><input type="radio" name="q33" value="d"> D) Normal operating currents.</label>
+                </div>
+            </div>
+
+            <!-- Question 34 -->
+            <div class="question-card">
+                <p>34. In an AC distribution system, the exact solution for voltage drop is done using:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q34" value="a"> A) Real numbers.</label>
+                    <label><input type="radio" name="q34" value="b"> B) Vectors.</label>
+                    <label><input type="radio" name="q34" value="c"> C) Complex numbers (phasors).</label>
+                    <label><input type="radio" name="q34" value="d"> D) Integers.</label>
+                </div>
+            </div>
+
+            <!-- Question 35 -->
+            <div class="question-card">
+                <p>35. What is the function of the tap changer on a distribution transformer?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q35" value="a"> A) To increase the system's power factor.</label>
+                    <label><input type="radio" name="q35" value="b"> B) To adjust for medium voltage drop.</label>
+                    <label><input type="radio" name="q35" value="c"> C) To protect against short circuits.</label>
+                    <label><input type="radio" name="q35" value="d"> D) To switch between different phases.</label>
+                </div>
+            </div>
+
+            <!-- Question 36 -->
+            <div class="question-card">
+                <p>36. What is the role of a "shunt conductance" in a transmission line?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q36" value="a"> A) It provides the main path for power flow.</label>
+                    <label><input type="radio" name="q36" value="b"> B) It represents the losses due to leakage current across insulators.</label>
+                    <label><input type="radio" name="q36" value="c"> C) It is responsible for the voltage drop.</label>
+                    <label><input type="radio" name="q36" value="d"> D) It is the series impedance.</label>
+                </div>
+            </div>
+
+            <!-- Question 37 -->
+            <div class="question-card">
+                <p>37. What is a "fault" in an electrical power system?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q37" value="a"> A) A change in load.</label>
+                    <label><input type="radio" name="q37" value="b"> B) An intentional short circuit.</label>
+                    <label><input type="radio" name="q37" value="c"> C) An error in the protection system.</label>
+                    <label><input type="radio" name="q37" value="d"> D) Any defect that interferes with the normal flow of current.</label>
+                </div>
+            </div>
+
+            <!-- Question 38 -->
+            <div class="question-card">
+                <p>38. The shunt admittance of a transmission line is primarily important in:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q38" value="a"> A) Short lines.</label>
+                    <label><input type="radio" name="q38" value="b"> B) Medium lines.</label>
+                    <label><input type="radio" name="q38" value="c"> C) Long lines and high voltage cables.</label>
+                    <label><input type="radio" name="q38" value="d"> D) Low voltage systems.</label>
+                </div>
+            </div>
+
+            <!-- Question 39 -->
+            <div class="question-card">
+                <p>39. What is a "Service Mains"?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q39" value="a"> A) The primary feeder.</label>
+                    <label><input type="radio" name="q39" value="b"> B) A small cable connecting the distributor to the consumer.</label>
+                    <label><input type="radio" name="q39" value="c"> C) A transmission line.</label>
+                    <label><input type="radio" name="q39" value="d"> D) The main grid connection.</label>
+                </div>
+            </div>
+            
+            <!-- Question 40 -->
+            <div class="question-card">
+                <p>40. According to the notes, which country's distribution system uses underground cables for primary feeders?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q40" value="a"> A) The United States.</label>
+                    <label><input type="radio" name="q40" value="b"> B) Egypt.</label>
+                    <label><input type="radio" name="q40" value="c"> C) Japan.</label>
+                    <label><input type="radio" name="q40" value="d"> D) Germany.</label>
+                </div>
+            </div>
+
+            <!-- Question 41 -->
+            <div class="question-card">
+                <p>41. The voltage regulation of a transmission line is defined as the difference between the sending end voltage and the receiving end voltage at full load, expressed as a percentage of the:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q41" value="a"> A) Sending end voltage.</label>
+                    <label><input type="radio" name="q41" value="b"> B) No-load voltage.</label>
+                    <label><input type="radio" name="q41" value="c"> C) Receiving end voltage.</label>
+                    <label><input type="radio" name="q41" value="d"> D) Total voltage drop.</label>
+                </div>
+            </div>
+
+            <!-- Question 42 -->
+            <div class="question-card">
+                <p>42. What is the effect of a power factor close to unity on voltage regulation?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q42" value="a"> A) It increases the voltage regulation.</label>
+                    <label><input type="radio" name="q42" value="b"> B) It decreases the voltage regulation.</label>
+                    <label><input type="radio" name="q42" value="c"> C) It has no effect.</label>
+                    <label><input type="radio" name="q42" value="d"> D) It makes the voltage regulation negative.</label>
+                </div>
+            </div>
+
+            <!-- Question 43 -->
+            <div class="question-card">
+                <p>43. When can the voltage at the receiving end of a long transmission line be higher than the voltage at the sending end?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q43" value="a"> A) Only at full load.</label>
+                    <label><input type="radio" name="q43" value="b"> B) Under no-load or light load conditions (Ferranti effect).</label>
+                    <label><input type="radio" name="q43" value="c"> C) Never, as it violates conservation of energy.</label>
+                    <label><input type="radio" name="q43" value="d"> D) When the line is very short.</label>
+                </div>
+            </div>
+            
+            <!-- Question 44 -->
+            <div class="question-card">
+                <p>44. Which type of distribution system is considered the most common and simple?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q44" value="a"> A) Radial system.</label>
+                    <label><input type="radio" name="q44" value="b"> B) Ring main system.</label>
+                    <label><input type="radio" name="q44" value="c"> C) Interconnected system.</label>
+                    <label><input type="radio" name="q44" value="d"> D) Mesh network.</label>
+                </div>
+            </div>
+
+            <!-- Question 45 -->
+            <div class="question-card">
+                <p>45. Which of these is a disadvantage of a radial distribution system?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q45" value="a"> A) Low initial cost.</label>
+                    <label><input type="radio" name="q45" value="b"> B) Simple design.</label>
+                    <label><input type="radio" name="q45" value="c"> C) Lack of continuity of service if a fault occurs.</label>
+                    <label><input type="radio" name="q45" value="d"> D) Lower voltage drop.</label>
+                </div>
+            </div>
+
+            <!-- Question 46 -->
+            <div class="question-card">
+                <p>46. A system that can be described as a two-way street for power delivery with a more reliable supply is a:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q46" value="a"> A) Radial system.</label>
+                    <label><input type="radio" name="q46" value="b"> B) Ring main system.</label>
+                    <label><input type="radio" name="q46" value="c"> C) Single feeder system.</label>
+                    <label><input type="radio" name="q46" value="d"> D) Open loop system.</label>
+                </div>
+            </div>
+
+            <!-- Question 47 -->
+            <div class="question-card">
+                <p>47. In an interconnected grid, what is the primary benefit of having power from multiple sources?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q47" value="a"> A) It increases the cost of power.</label>
+                    <label><input type="radio" name="q47" value="b"> B) It decreases the overall stability of the system.</label>
+                    <label><input type="radio" name="q47" value="c"> C) It enhances reliability and allows for a more flexible power supply.</label>
+                    <label><input type="radio" name="q47" value="d"> D) It makes maintenance more difficult.</label>
+                </div>
+            </div>
+            
+            <!-- Question 48 -->
+            <div class="question-card">
+                <p>48. What is the typical range of voltage for transmission lines, as mentioned in the lecture notes?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q48" value="a"> A) 220 V to 380 V.</label>
+                    <label><input type="radio" name="q48" value="b"> B) 11 kV to 33 kV.</label>
+                    <label><input type="radio" name="q48" value="c"> C) 138 kV to 500 kV.</label>
+                    <label><input type="radio" name="q48" value="d"> D) 6 kV to 11 kV.</label>
+                </div>
+            </div>
+
+            <!-- Question 49 -->
+            <div class="question-card">
+                <p>49. A `service mains` connects the `distributors` to the:</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q49" value="a"> A) Substation.</label>
+                    <label><input type="radio" name="q49" value="b"> B) Transmission lines.</label>
+                    <label><input type="radio" name="q49" value="c"> C) Consumers.</label>
+                    <label><input type="radio" name="q49" value="d"> D) Generators.</label>
+                </div>
+            </div>
+            
+            <!-- Question 50 -->
+            <div class="question-card">
+                <p>50. Why is the current through a distributor not constant?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q50" value="a"> A) Because the voltage is not constant.</label>
+                    <label><input type="radio" name="q50" value="b"> B) Because tappings are taken at various places along its length.</label>
+                    <label><input type="radio" name="q50" value="c"> C) Because of the line impedance.</label>
+                    <label><input type="radio" name="q50" value="d"> D) Because the power factor is always changing.</label>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn mt-6">Submit Answers</button>
+            <div id="score-message" class="score-message"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Correct answers for each question
+            const correctAnswers = {
+                q1: 'a', q2: 'c', q3: 'c', q4: 'c', q5: 'b', q6: 'b', q7: 'c', q8: 'c', q9: 'c', q10: 'b',
+                q11: 'b', q12: 'c', q13: 'a', q14: 'c', q15: 'b', q16: 'c', q17: 'c', q18: 'c', q19: 'c', q20: 'c',
+                q21: 'c', q22: 'b', q23: 'c', q24: 'c', q25: 'b', q26: 'd', q27: 'c', q28: 'c', q29: 'c', q30: 'b',
+                q31: 'c', q32: 'b', q33: 'd', q34: 'c', q35: 'b', q36: 'b', q37: 'd', q38: 'c', q39: 'b', q40: 'b',
+                q41: 'c', q42: 'b', q43: 'b', q44: 'a', q45: 'c', q46: 'b', q47: 'c', q48: 'c', q49: 'c', q50: 'b'
+            };
+
+            let score = 0;
+            const form = event.target;
+            const questions = form.querySelectorAll('.question-card');
+            const totalQuestions = Object.keys(correctAnswers).length;
+
+            questions.forEach(questionCard => {
+                const questionName = questionCard.querySelector('input[type="radio"]').name;
+                const userAnswer = form.elements[questionName].value;
+                const correctAnswer = correctAnswers[questionName];
+                const labels = questionCard.querySelectorAll('label');
+                
+                // Disable all radio buttons
+                form.elements[questionName].forEach(radio => {
+                    radio.disabled = true;
+                });
+
+                labels.forEach(label => {
+                    const radio = label.querySelector('input[type="radio"]');
+                    const optionValue = radio.value;
+
+                    // Reset any previous styles
+                    label.classList.remove('correct', 'incorrect');
+                    
+                    // Highlight the correct answer in teal
+                    if (optionValue === correctAnswer) {
+                        label.classList.add('correct');
+                    }
+                    
+                    // Highlight the user's incorrect choice in red
+                    if (userAnswer === optionValue && userAnswer !== correctAnswer) {
+                        label.classList.add('incorrect');
+                    }
+                });
+
+                // Check if the user's answer is correct
+                if (userAnswer === correctAnswer) {
+                    score++;
+                }
+            });
+
+            // Display the final score
+            const scoreMessage = document.getElementById('score-message');
+            scoreMessage.textContent = `You scored ${score} out of ${totalQuestions}!`;
+            scoreMessage.style.display = 'block';
+
+            // Scroll to the score message
+            scoreMessage.scrollIntoView({ behavior: 'smooth' });
+            
+            // Disable the submit button
+            form.querySelector('.submit-btn').disabled = true;
+        });
+    </script>
+</body>
+</html>
