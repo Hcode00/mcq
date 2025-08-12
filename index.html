@@ -191,7 +191,7 @@
 
             <!-- Question 9 -->
             <div class="question-card">
-                <p>9. The two-port network equations for a transmission line are <span class="math">V_S=A V_R + B I_R</span> and <span class="math">I_S=C V_R + D I_R</span>. What do <span class="math">V_S</span> and <span class="math">I_S</span> represent?</p>
+                <p>9. The two-port network equations for a transmission line are $V_{S}=A~V_{R}+B~I_{R}$ and $I_{S}=C~V_{R}+D~I_{R}$. What do $V_S$ and $I_S$ represent?</p>
                 <div class="options-list">
                     <label><input type="radio" name="q9" value="a"> A) Receiving end voltage and current.</label>
                     <label><input type="radio" name="q9" value="b"> B) Sending end voltage and current.</label>
@@ -215,10 +215,10 @@
             <div class="question-card">
                 <p>11. The lecture notes specify that voltage variations at consumer terminals should be within what permissible limits?</p>
                 <div class="options-list">
-                    <label><input type="radio" name="q11" value="a"> A) \pm 2%.</label>
-                    <label><input type="radio" name="q11" value="b"> B) \pm 5%.</label>
-                    <label><input type="radio" name="q11" value="c"> C) \pm 10%.</label>
-                    <label><input type="radio" name="q11" value="d"> D) \pm 15%.</label>
+                    <label><input type="radio" name="q11" value="a"> A) $\pm 2\%$.</label>
+                    <label><input type="radio" name="q11" value="b"> B) $\pm 5\%$.</label>
+                    <label><input type="radio" name="q11" value="c"> C) $\pm 10\%$.</label>
+                    <label><input type="radio" name="q11" value="d"> D) $\pm 15\%$.</label>
                 </div>
             </div>
 
@@ -431,6 +431,61 @@
                 </div>
             </div>
             
+            <!-- Question 31 -->
+            <div class="question-card">
+                <p>31. What is the consequence of a short circuit if it is allowed to persist?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q31" value="a"> A) Higher efficiency.</label>
+                    <label><input type="radio" name="q31" value="b"> B) Damage to equipment, fire, and service disruption.</label>
+                    <label><input type="radio" name="q31" value="c"> C) An increase in system voltage.</label>
+                    <label><input type="radio" name="q31" value="d"> D) A decrease in line impedance.</label>
+                </div>
+            </div>
+
+            <!-- Question 32 -->
+            <div class="question-card">
+                <p>32. What is the voltage for a 3-phase load in a secondary distribution system, as shown in the notes?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q32" value="a"> A) 220 V.</label>
+                    <label><input type="radio" name="q32" value="b"> B) 380 V.</label>
+                    <label><input type="radio" name="q32" value="c"> C) 11 kV.</label>
+                    <label><input type="radio" name="q32" value="d"> D) 138 V.</label>
+                </div>
+            </div>
+
+            <!-- Question 33 -->
+            <div class="question-card">
+                <p>33. The `medium voltage drop` in a secondary distribution system can be compensated by what?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q33" value="a"> A) Changing the cable type.</label>
+                    <label><input type="radio" name="q33" value="b"> B) Adjusting the transformer tap changer.</label>
+                    <label><input type="radio" name="q33" value="c"> C) Increasing the conductor radius.</label>
+                    <label><input type="radio" name="q33" value="d"> D) Adding more distributors.</label>
+                </div>
+            </div>
+
+            <!-- Question 34 -->
+            <div class="question-card">
+                <p>34. A distributor is a conductor from which...</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q34" value="a"> A) The main transmission line begins.</label>
+                    <label><input type="radio" name="q34" value="b"> B) Tappings are taken to supply consumers.</label>
+                    <label><input type="radio" name="q34" value="c"> C) The voltage is stepped up.</label>
+                    <label><input type="radio" name="q34" value="d"> D) The frequency is regulated.</label>
+                </div>
+            </div>
+
+            <!-- Question 35 -->
+            <div class="question-card">
+                <p>35. In the protection system, which component opens the line to break the circuit when a fault occurs?</p>
+                <div class="options-list">
+                    <label><input type="radio" name="q35" value="a"> A) A relay.</label>
+                    <label><input type="radio" name="q35" value="b"> B) A transducer.</label>
+                    <label><input type="radio" name="q35" value="c"> C) A circuit breaker.</label>
+                    <label><input type="radio" name="q35" value="d"> D) A transformer.</label>
+                </div>
+            </div>
+            
             <button type="submit" class="submit-btn mt-6">Submit Answers</button>
         </form>
     </div>
@@ -445,7 +500,8 @@
                 q11: 'b', q12: 'c', q13: 'b', q14: 'b', q15: 'b',
                 q16: 'c', q17: 'b', q18: 'c', q19: 'c', q20: 'c',
                 q21: 'b', q22: 'b', q23: 'c', q24: 'c', q25: 'c',
-                q26: 'b', q27: 'b', q28: 'c', q29: 'c', q30: 'c'
+                q26: 'b', q27: 'b', q28: 'c', q29: 'c', q30: 'c',
+                q31: 'b', q32: 'b', q33: 'b', q34: 'b', q35: 'c'
             };
 
             let score = 0;
@@ -455,10 +511,11 @@
 
             questions.forEach(questionCard => {
                 const questionName = questionCard.querySelector('input[type="radio"]').name;
-                const userAnswer = form.elements[questionName].value;
+                const selectedRadio = form.elements[questionName].value;
                 const correctAnswer = correctAnswers[questionName];
                 const labels = questionCard.querySelectorAll('label');
-
+                
+                // Disable radio buttons after submission
                 form.elements[questionName].forEach(radio => {
                     radio.disabled = true;
                 });
@@ -472,18 +529,18 @@
                         label.classList.add('correct');
                     }
                     
-                    if (userAnswer === optionValue && userAnswer !== correctAnswer) {
+                    if (selectedRadio === optionValue && selectedRadio !== correctAnswer) {
                         label.classList.add('incorrect');
                     }
                 });
 
-                if (userAnswer === correctAnswer) {
+                if (selectedRadio === correctAnswer) {
                     score++;
                 }
             });
 
             const scoreMessage = document.getElementById('score-message');
-            scoreMessage.textContent = `You scored {score} out of {totalQuestions}!`;
+            scoreMessage.textContent = `You scored ${score} out of ${totalQuestions}!`;
             scoreMessage.style.display = 'block';
             scoreMessage.scrollIntoView({ behavior: 'smooth' });
             
