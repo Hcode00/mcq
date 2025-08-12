@@ -169,7 +169,7 @@
 
             <!-- Question 7 -->
             <div class="question-card">
-                <p>7. For a transmission line model, what does the variable <span class="math">$z$</span> represent?</p>
+                <p>7. For a transmission line model, what does the variable <span class="math">z</span> represent?</p>
                 <div class="options-list">
                     <label><input type="radio" name="q7" value="a"> A) Shunt admittance per unit length.</label>
                     <label><input type="radio" name="q7" value="b"> B) Line series impedance per unit length.</label>
@@ -182,16 +182,16 @@
             <div class="question-card">
                 <p>8. What is the term for the shunt admittance per unit length of a transmission line?</p>
                 <div class="options-list">
-                    <label><input type="radio" name="q8" value="a"> A) <span class="math">$z$</span>.</label>
-                    <label><input type="radio" name="q8" value="b"> B) <span class="math">$y$</span>.</label>
-                    <label><input type="radio" name="q8" value="c"> C) <span class="math">$R$</span>.</label>
-                    <label><input type="radio" name="q8" value="d"> D) <span class="math">$X$</span>.</label>
+                    <label><input type="radio" name="q8" value="a"> A) <span class="math">z</span>.</label>
+                    <label><input type="radio" name="q8" value="b"> B) <span class="math">y</span>.</label>
+                    <label><input type="radio" name="q8" value="c"> C) <span class="math">R</span>.</label>
+                    <label><input type="radio" name="q8" value="d"> D) <span class="math">X</span>.</label>
                 </div>
             </div>
 
             <!-- Question 9 -->
             <div class="question-card">
-                <p>9. The two-port network equations for a transmission line are <span class="math">$V_S=A V_R + B I_R$</span> and <span class="math">$I_S=C V_R + D I_R$</span>. What do <span class="math">$V_S$</span> and <span class="math">$I_S$</span> represent?</p>
+                <p>9. The two-port network equations for a transmission line are <span class="math">V_S=A V_R + B I_R</span> and <span class="math">I_S=C V_R + D I_R</span>. What do <span class="math">V_S</span> and <span class="math">I_S</span> represent?</p>
                 <div class="options-list">
                     <label><input type="radio" name="q9" value="a"> A) Receiving end voltage and current.</label>
                     <label><input type="radio" name="q9" value="b"> B) Sending end voltage and current.</label>
@@ -215,10 +215,10 @@
             <div class="question-card">
                 <p>11. The lecture notes specify that voltage variations at consumer terminals should be within what permissible limits?</p>
                 <div class="options-list">
-                    <label><input type="radio" name="q11" value="a"> A) $\pm$ 2%.</label>
-                    <label><input type="radio" name="q11" value="b"> B) $\pm$ 5%.</label>
-                    <label><input type="radio" name="q11" value="c"> C) $\pm$ 10%.</label>
-                    <label><input type="radio" name="q11" value="d"> D) $\pm$ 15%.</label>
+                    <label><input type="radio" name="q11" value="a"> A) \pm 2%.</label>
+                    <label><input type="radio" name="q11" value="b"> B) \pm 5%.</label>
+                    <label><input type="radio" name="q11" value="c"> C) \pm 10%.</label>
+                    <label><input type="radio" name="q11" value="d"> D) \pm 15%.</label>
                 </div>
             </div>
 
@@ -483,7 +483,7 @@
             });
 
             const scoreMessage = document.getElementById('score-message');
-            scoreMessage.textContent = `You scored ${score} out of ${totalQuestions}!`;
+            scoreMessage.textContent = `You scored {score} out of {totalQuestions}!`;
             scoreMessage.style.display = 'block';
             scoreMessage.scrollIntoView({ behavior: 'smooth' });
             
